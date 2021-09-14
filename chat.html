@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Room</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS  if error remove 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script-->
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    body,
+    html {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .speak{
+        background-color: transparent;
+        border: transparent;
+        margin-left: 100px;
+    }
+
+    .login-input {
+        width: 50%;
+    }
+
+    body {
+        background: linear-gradient(-90deg, blue, darkblue);
+    }
+
+    #loginD {
+        padding: 50px;
+        border-radius: 40px;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #chatMessageDiv {
+        border-radius: 40px;
+        background-color: rgba(15, 178, 228, 0.9);
+        padding:5px;
+        padding-left: 20px;
+        padding-top: 10px;
+        margin-bottom:40%;
+    }
+
+    .prop{
+        background: linear-gradient(-130deg , rgb(119, 119, 255),rgb(255, 255, 255));
+        display: inline-block;
+        border-radius: 30px;
+        padding-right: 10px;
+        padding-left: 20px;
+    }
+
+    .tick{
+        height: 30px;
+    }
+
+    #sendButton {
+        animation: buttons 2s linear infinite;
+    }
+
+    @keyframes buttons {
+        0% {
+            background-color: blue;
+        }
+
+        50% {
+            background-color: red;
+        }
+
+        100% {
+            background-color: blue;
+        }
+    }
+</style>
+
+<body>
+    <div id="logoutdiv" class="d-flex justify-content-end mr-5 mt-4">
+        <button id="logout" class="btn btn-danger"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</button>
+    </div>
+    <div class="d-flex justify-content-center mt-5">
+        <div id="chatMessageDiv" style="width:70%;"></div>
+    </div>
+    <div id="typeInput" class="form-group bg-white fixed-bottom m-0">
+        <div class="text-center mb-5">
+            <h3>Type Message:</h3>
+            <div class="input-group">
+                <input type="text" class="form-control" id="input" style="width:80%;display: inline !important; line-height: normal;">
+                <div class="input-group-append">
+                    <button class="btn btn-white" id="micButton" style="margin-bottom: 5px; border: 1px solid #ced4da"><i class="fa fa-microphone" aria-hidden="true"></i></button>
+                    <button class="btn btn-success" id="sendButton" style="margin-bottom: 5px;">Send</button>
+                </div>
+            </div>            
+        </div>
+    </div>
+    <!--Fire base link-->
+    <script type="module" src="chat.js"></script>
+</body>
+
+
+</html>
